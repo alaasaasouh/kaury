@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <rect width="200" height="200" rx="16" fill="#D8003A"/>
+  <!-- Stylized W with speed lines -->
+  <g fill="white">
+    <!-- Speed lines left -->
+    <rect x="18" y="58" width="32" height="7" rx="3.5" opacity="0.9"/>
+    <rect x="24" y="72" width="24" height="7" rx="3.5" opacity="0.9"/>
+    <rect x="30" y="86" width="16" height="7" rx="3.5" opacity="0.9"/>
+    <!-- W shape -->
+    <polygon points="55,50 72,110 90,75 108,110 125,50 113,50 108,80 90,55 72,80 67,50" />
+  </g>
+  <!-- whish text -->
+  <text x="100" y="138" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="white" text-anchor="middle" letter-spacing="1">whish</text>
+  <!-- MONEY text -->
+  <text x="100" y="162" font-family="Arial, sans-serif" font-size="14" font-weight="400" fill="white" text-anchor="middle" letter-spacing="4">MONEY</text>
+</svg>

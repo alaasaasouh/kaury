@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>KAURY — The Art of Coffee</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <!-- cart toast lives here via JS -->
+</head>
+<body>
+
+  <!-- SCROLL PROGRESS BAR -->
+  <div class="scroll-progress" id="scroll-progress"></div>
+
+  <!-- LOADER -->
+  <div id="loader">
+    <div class="loader-brand">KAURY</div>
+    <div class="loader-tagline">Specialty Coffee Atelier</div>
+    <div class="loader-bar-wrap">
+      <div id="loader-bar"></div>
+    </div>
+    <div id="loader-percent">0%</div>
+  </div>
+
+  <!-- FIXED HEADER -->
+  <header class="site-header">
+    <nav>
+      <a href="#" class="nav-logo">KAURY</a>
+      <ul class="nav-links">
+        <li><a href="#about">Our Story</a></li>
+        <li><a href="#shop" class="nav-cta">Order Now</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO (standalone 100vh) -->
+  <section class="hero-standalone">
+    <div class="hero-inner">
+      <span class="section-label">001 / Specialty Coffee</span>
+      <h1 class="hero-heading">
+        <span class="word">KAU</span><span class="word word-italic">RY</span>
+      </h1>
+      <p class="hero-tagline">Where Coffee Becomes Art</p>
+    </div>
+    <div class="scroll-indicator">
+      <span class="scroll-label">Discover</span>
+      <div class="scroll-arrow">
+        <svg width="12" height="24" viewBox="0 0 12 24" fill="none">
+          <line x1="6" y1="0" x2="6" y2="20" stroke="currentColor" stroke-width="1"/>
+          <polyline points="1,15 6,22 11,15" stroke="currentColor" stroke-width="1" fill="none"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- CANVAS (fixed, full viewport) -->
+  <div class="canvas-wrap" id="canvas-wrap">
+    <canvas id="canvas"></canvas>
+  </div>
+
+  <!-- DARK OVERLAY -->
+  <div id="dark-overlay"></div>
+
+  <!-- MARQUEE (fixed, slides on scroll) -->
+  <div class="marquee-wrap" id="marquee-1" data-scroll-speed="-30">
+    <div class="marquee-text">
+      KAURY&nbsp;·&nbsp;THE ART OF COFFEE&nbsp;·&nbsp;KAURY&nbsp;·&nbsp;THE ART OF COFFEE&nbsp;·&nbsp;KAURY&nbsp;·&nbsp;THE ART OF COFFEE&nbsp;·
+    </div>
+  </div>
+
+  <!-- SCROLL CONTAINER -->
+  <div id="scroll-container">
+
+    <!-- SECTION 1: Master Roasters (align-left) -->
+    <section class="scroll-section section-content align-left"
+             data-enter="8" data-leave="28" data-animation="slide-left">
+      <div class="section-inner">
+        <span class="section-label">002 / Craft</span>
+        <h2 class="section-heading">Master<br/>Roasters</h2>
+        <p class="section-body">Each batch is profiled by hand — temperature curves built over years of study, intuition, and obsession. We roast small, we roast slow, and we roast every order the morning it ships.</p>
+        <span class="section-note">Roasted to order, every morning</span>
+      </div>
+    </section>
+
+    <!-- SECTION 2: Single Origin (align-right) -->
+    <section class="scroll-section section-content align-right"
+             data-enter="30" data-leave="50" data-animation="slide-right">
+      <div class="section-inner">
+        <span class="section-label">003 / Origin</span>
+        <h2 class="section-heading">Single<br/>Origin</h2>
+        <p class="section-body">We travel to the farm, taste at the source, and build lasting relationships with growers in Ethiopia, Colombia, Yemen, and beyond. No blends. No compromise. Just the purest expression of place.</p>
+        <span class="section-note">Traceable to the single farm</span>
+      </div>
+    </section>
+
+    <!-- SECTION 3: Stats (dark overlay) -->
+    <section class="scroll-section section-stats"
+             data-enter="52" data-leave="68" data-animation="stagger-up">
+      <div class="stats-grid">
+        <div class="stat">
+          <div class="stat-row">
+            <span class="stat-number" data-value="15" data-decimals="0">0</span>
+            <span class="stat-suffix">yr</span>
+          </div>
+          <span class="stat-label">Years of roasting mastery</span>
+        </div>
+        <div class="stat">
+          <div class="stat-row">
+            <span class="stat-number" data-value="34" data-decimals="0">0</span>
+            <span class="stat-suffix">+</span>
+          </div>
+          <span class="stat-label">Micro-lot varieties</span>
+        </div>
+        <div class="stat">
+          <div class="stat-row">
+            <span class="stat-number" data-value="98" data-decimals="0">0</span>
+            <span class="stat-suffix">pt</span>
+          </div>
+          <span class="stat-label">Specialty grade score</span>
+        </div>
+        <div class="stat">
+          <div class="stat-row">
+            <span class="stat-number" data-value="12" data-decimals="0">0</span>
+            <span class="stat-suffix"></span>
+          </div>
+          <span class="stat-label">Countries of origin</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: The Ritual (align-left) -->
+    <section class="scroll-section section-content align-left"
+             data-enter="70" data-leave="85" data-animation="rotate-in">
+      <div class="section-inner">
+        <span class="section-label">004 / Ritual</span>
+        <h2 class="section-heading">The<br/>Ritual</h2>
+        <p class="section-body">Great coffee is not an accident — it is a practice. We design our roasts around specific brew methods: the patience of pour-over, the pressure of espresso, the meditation of French press. Each cup is a ceremony.</p>
+        <span class="section-note">Every cup, a ceremony</span>
+      </div>
+    </section>
+
+    <!-- CTA (persists) -->
+    <section class="scroll-section section-cta"
+             data-enter="87" data-leave="99" data-animation="fade-up"
+             data-persist="true">
+      <div class="section-inner cta-inner">
+        <span class="section-label">005 / Order</span>
+        <h2 class="cta-heading">Begin Your<br/>Ritual</h2>
+        <p class="cta-sub">Small-batch roasts shipped fresh. Monthly subscriptions available.</p>
+        <a href="#shop" class="cta-button">Shop the Collection</a>
+      </div>
+    </section>
+
+  </div><!-- /scroll-container -->
+
+  <!-- ==============================
+       PRODUCTS SECTION
+       ============================== -->
+  <section class="products-section" id="shop">
+    <div class="products-inner">
+
+      <div class="products-header">
+        <span class="products-eyebrow">Our Collection</span>
+        <h2 class="products-heading">Crafted for<br/>Every Cup</h2>
+        <p class="products-sub">Three expressions of our craft — freshly roasted, carefully packed, and delivered to your door.</p>
+      </div>
+
+      <div class="products-grid">
+
+        <!-- CARD 1 — coffee1 (Signature Blend) -->
+        <article class="product-card product-card--dark" id="pc-1">
+          <div class="product-img-wrap">
+            <img src="images/coffee1.png" alt="KAURY Signature Blend" class="product-img" loading="lazy"/>
+            <span class="product-badge">Best Seller</span>
+            <div class="product-img-overlay">
+              <button class="quick-order-btn"
+                data-name="KAURY Signature Blend"
+                data-price="18.99"
+                data-image="images/coffee1.png"
+                data-desc="Medium Roast · 100% Arabica · 250g">Quick Order</button>
+            </div>
+          </div>
+          <div class="product-body">
+            <p class="product-region">Medium Roast · 100% Arabica · 250g</p>
+            <h3 class="product-name">KAURY Signature Blend</h3>
+            <p class="product-notes">Chocolate · Caramel · Roasted Nuts</p>
+            <p class="product-desc">A premium medium roast from carefully selected 100% Arabica beans. Smooth, rich flavor with warm notes of chocolate, caramel, and roasted nuts. Perfect for every morning.</p>
+            <ul class="product-features">
+              <li>100% Arabica Coffee</li>
+              <li>Smooth &amp; Balanced Flavor</li>
+              <li>Freshly Roasted</li>
+              <li>250g Premium Pack</li>
+            </ul>
+            <div class="product-footer">
+              <span class="product-price">$18.99</span>
+              <button class="order-now-btn"
+                data-name="KAURY Signature Blend"
+                data-price="18.99"
+                data-image="images/coffee1.png"
+                data-desc="Medium Roast · 100% Arabica · 250g">Order Now</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- CARD 2 — coffee2 (Dark Roast Reserve) FEATURED -->
+        <article class="product-card product-card--featured" id="pc-2">
+          <div class="product-img-wrap">
+            <img src="images/coffee2.png" alt="KAURY Dark Roast Reserve" class="product-img" loading="lazy"/>
+            <span class="product-badge product-badge--gold">Premium</span>
+            <div class="product-img-overlay">
+              <button class="quick-order-btn"
+                data-name="KAURY Dark Roast Reserve"
+                data-price="21.99"
+                data-image="images/coffee2.png"
+                data-desc="Dark Roast · Small Batch · 500g">Quick Order</button>
+            </div>
+          </div>
+          <div class="product-body">
+            <p class="product-region">Dark Roast · Small Batch · 500g</p>
+            <h3 class="product-name">KAURY Dark Roast Reserve</h3>
+            <p class="product-notes">Smoky · Rich Cocoa · Bold Aroma</p>
+            <p class="product-desc">Bold and intense — deep smoky notes, rich cocoa undertones, and a powerful aroma that creates a strong yet smooth finish. Made for true coffee lovers.</p>
+            <ul class="product-features">
+              <li>Premium Dark Roast</li>
+              <li>Rich Cocoa &amp; Smoky Notes</li>
+              <li>Small Batch Roasted</li>
+              <li>500g Coffee Beans Pack</li>
+            </ul>
+            <div class="product-footer">
+              <span class="product-price">$21.99</span>
+              <button class="order-now-btn"
+                data-name="KAURY Dark Roast Reserve"
+                data-price="21.99"
+                data-image="images/coffee2.png"
+                data-desc="Dark Roast · Small Batch · 500g">Order Now</button>
+            </div>
+          </div>
+        </article>
+
+        <!-- CARD 3 — coffee3 (Espresso Capsules) -->
+        <article class="product-card product-card--dark" id="pc-3">
+          <div class="product-img-wrap">
+            <img src="images/coffee1.png" alt="KAURY Espresso Capsules" class="product-img" loading="lazy"/>
+            <span class="product-badge">Nespresso® Compatible</span>
+            <div class="product-img-overlay">
+              <button class="quick-order-btn"
+                data-name="KAURY Espresso Capsules"
+                data-price="14.99"
+                data-image="images/coffee1.png"
+                data-desc="Medium-Dark Roast · Nespresso® · 10 Capsules">Quick Order</button>
+            </div>
+          </div>
+          <div class="product-body">
+            <p class="product-region">Medium-Dark Roast · Intensity 8/10 · 10 Capsules</p>
+            <h3 class="product-name">KAURY Espresso Capsules</h3>
+            <p class="product-notes">Bold · Smooth · Velvety Crema</p>
+            <p class="product-desc">Rich café-quality espresso at home. 100% Arabica beans — smooth, bold flavor with deep roasted notes and a velvety crema. Convenience without compromise.</p>
+            <ul class="product-features">
+              <li>Nespresso® Compatible</li>
+              <li>Rich &amp; Smooth Espresso</li>
+              <li>10 Premium Capsules</li>
+              <li>Intensity Level: 8/10</li>
+            </ul>
+            <div class="product-footer">
+              <span class="product-price">$14.99</span>
+              <button class="order-now-btn"
+                data-name="KAURY Espresso Capsules"
+                data-price="14.99"
+                data-image="images/coffee3.png"
+                data-desc="Medium-Dark Roast · Nespresso® · 10 Capsules">Order Now</button>
+            </div>
+          </div>
+        </article>
+
+      </div><!-- /products-grid -->
+
+      <p class="products-note-text">Orders processed within 24 hours &nbsp;·&nbsp; Free shipping on orders over $40</p>
+
+    </div>
+  </section>
+
+  <!-- ==============================
+       CHECKOUT MODAL
+       ============================== -->
+  <div class="checkout-overlay" id="checkout-overlay" role="dialog" aria-modal="true" aria-label="Checkout">
+    <div class="checkout-modal">
+
+      <button class="checkout-close" id="checkout-close" aria-label="Close">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+          <line x1="1" y1="1" x2="17" y2="17" stroke="currentColor" stroke-width="1.5"/>
+          <line x1="17" y1="1" x2="1" y2="17" stroke="currentColor" stroke-width="1.5"/>
+        </svg>
+      </button>
+
+      <!-- Step 1: Order Summary -->
+      <div class="checkout-step" id="step-1">
+        <span class="checkout-eyebrow">Order Summary</span>
+        <div class="checkout-product">
+          <img src="" alt="" id="checkout-img" class="checkout-product-img"/>
+          <div class="checkout-product-info">
+            <h3 id="checkout-name">Product Name</h3>
+            <p id="checkout-desc">Description</p>
+          </div>
+        </div>
+
+        <div class="checkout-qty-row">
+          <span class="checkout-label">Quantity</span>
+          <div class="qty-control">
+            <button class="qty-btn" id="qty-minus">−</button>
+            <span class="qty-value" id="qty-value">1</span>
+            <button class="qty-btn" id="qty-plus">+</button>
+          </div>
+        </div>
+
+        <div class="checkout-totals">
+          <div class="checkout-total-row">
+            <span>Subtotal</span>
+            <span id="checkout-subtotal">$0.00</span>
+          </div>
+          <div class="checkout-total-row">
+            <span>Shipping</span>
+            <span id="checkout-shipping">$3.00</span>
+          </div>
+          <div class="checkout-total-row checkout-total-row--grand">
+            <span>Total</span>
+            <span id="checkout-total">$0.00</span>
+          </div>
+        </div>
+
+        <button class="checkout-next-btn" id="checkout-next">
+          Proceed to Payment
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Step 2: WhishMoney Payment -->
+      <div class="checkout-step checkout-step--hidden" id="step-2">
+        <span class="checkout-eyebrow">Payment via WhishMoney</span>
+        <h3 class="checkout-pay-title">Complete Your Payment</h3>
+
+        <div class="whish-payment-box">
+          <img src="images/whish-logo.jpg" alt="WhishMoney" class="whish-logo"/>
+          <div class="whish-instructions">
+            <p class="whish-step"><span>1</span> Open your <strong>Whish Money</strong> app</p>
+            <p class="whish-step"><span>2</span> Send payment to this number:</p>
+            <div class="whish-number">
+              <span id="whish-phone">+961 XX XXX XXX</span>
+              <button class="whish-copy" id="whish-copy" title="Copy number">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                  <rect x="4" y="4" width="9" height="9" rx="1" stroke="currentColor" stroke-width="1.2"/>
+                  <path d="M2 10V2h8" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+                </svg>
+              </button>
+            </div>
+            <p class="whish-step"><span>3</span> Use reference: <strong id="whish-ref">—</strong></p>
+            <p class="whish-step"><span>4</span> Send amount: <strong id="whish-amount">$0.00</strong></p>
+          </div>
+        </div>
+
+        <div class="checkout-order-detail">
+          <p><strong id="pay-product-name">—</strong></p>
+          <p id="pay-product-qty">Qty: 1</p>
+        </div>
+
+        <button class="checkout-confirm-btn" id="checkout-confirm">
+          I've Completed Payment — Confirm Order
+        </button>
+        <button class="checkout-back-btn" id="checkout-back">← Back</button>
+      </div>
+
+      <!-- Step 3: Confirmation -->
+      <div class="checkout-step checkout-step--hidden" id="step-3">
+        <div class="checkout-success">
+          <div class="success-icon">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+              <circle cx="20" cy="20" r="19" stroke="#c4974a" stroke-width="1.5"/>
+              <path d="M12 20l6 6 10-12" stroke="#c4974a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 class="success-title">Order Confirmed!</h3>
+          <p class="success-msg">Thank you for your order. We'll verify your Whish payment and process your order within 2 hours. A confirmation will be sent to you shortly.</p>
+          <p class="success-ref">Reference: <strong id="confirm-ref">—</strong></p>
+          <button class="checkout-done-btn" id="checkout-done">Continue Shopping</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ==============================
+       ABOUT US (static, after scroll)
+       ============================== -->
+  <section class="about-section" id="about">
+    <div class="about-inner">
+
+      <div class="about-header">
+        <div class="about-header-text">
+          <span class="about-eyebrow">006 / Our Story</span>
+          <h2 class="about-heading">Two Decades<br/>of Devotion</h2>
+        </div>
+        <div class="about-line"></div>
+      </div>
+
+      <div class="about-body-grid">
+        <div class="about-story">
+          <p>KAURY began in a small roastery in 2009 — one woman, one drum roaster, and an obsession with the perfect cup. What started as a pursuit of personal excellence quietly became a movement.</p>
+          <p>Today, our atelier operates from its original address. The drum still turns. The obsession has only deepened. We source fewer than forty lots per year — each chosen for its singular character, each roasted with the same care as the first batch fifteen years ago.</p>
+          <p>We do not chase volume. We chase moments — the first sip of a natural Ethiopian, the quiet intensity of a washed Yemeni, the fruit-forward brightness of a Colombian nano-lot. These are not just coffees. They are experiences designed to stop you mid-thought.</p>
+        </div>
+
+        <div class="about-values">
+          <div class="about-value">
+            <span class="value-number">01</span>
+            <h3 class="value-title">Craft Over Scale</h3>
+            <p class="value-desc">We roast every batch by hand, never exceeding 12kg per drum. When demand exceeds capacity, we open a waitlist — not a second shift.</p>
+          </div>
+          <div class="about-value">
+            <span class="value-number">02</span>
+            <h3 class="value-title">Radical Traceability</h3>
+            <p class="value-desc">Every bag ships with the farm name, harvest date, process method, and the name of the person who picked it. You deserve to know your coffee's full story.</p>
+          </div>
+          <div class="about-value">
+            <span class="value-number">03</span>
+            <h3 class="value-title">Fair at the Source</h3>
+            <p class="value-desc">We pay a minimum of three times the commodity price, directly to farmers. No middlemen. No hollow certifications. Just a fair relationship built on respect.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-cta-row">
+        <a href="#about" class="about-cta-link">Read the Full Story &rarr;</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==============================
+       FOOTER
+       ============================== -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#" class="footer-logo" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">KAURY</a>
+          <p class="footer-tagline">Specialty Coffee Atelier<br/>Est. 2009</p>
+          <div class="footer-contact">
+            <a href="tel:+14155550192">+1 (415) 555-0192</a>
+            <a href="mailto:hello@kaury.coffee">hello@kaury.coffee</a>
+            <a href="https://instagram.com/kaury.coffee" target="_blank" rel="noopener">@kaury.coffee</a>
+          </div>
+        </div>
+
+        <div class="footer-nav-grid">
+          <div class="footer-col">
+            <span class="footer-col-title">Explore</span>
+            <ul>
+              <li><a href="#about">Our Story</a></li>
+              <li><a href="#">Single Origins</a></li>
+              <li><a href="#">Brew Guides</a></li>
+              <li><a href="#">The Atelier</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <span class="footer-col-title">Order</span>
+            <ul>
+              <li><a href="#shop">Shop Coffee</a></li>
+              <li><a href="#">Subscriptions</a></li>
+              <li><a href="#">Gift Sets</a></li>
+              <li><a href="#">Wholesale</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <span class="footer-col-title">Connect</span>
+            <ul>
+              <li><a href="https://instagram.com/kaury.coffee" target="_blank" rel="noopener">Instagram</a></li>
+              <li><a href="mailto:hello@kaury.coffee">Newsletter</a></li>
+              <li><a href="mailto:hello@kaury.coffee">Contact Us</a></li>
+              <li><a href="#">Press</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-divider"></div>
+
+      <div class="footer-bottom">
+        <span class="footer-copy">&copy; 2026 KAURY Coffee Atelier. All rights reserved.</span>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Cookie Preferences</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="lib/lenis.min.js"></script>
+  <script src="lib/gsap.min.js"></script>
+  <script src="lib/ScrollTrigger.min.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
